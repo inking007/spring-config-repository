@@ -1,0 +1,10 @@
+spring:
+  profiles: local
+  redis:
+    host: localhost
+    port: 6379
+    password: 1231
+server:
+  port: 8081
+custom:
+  message: Hello Spring EmployeeService Local Server updated !!!!!

@@ -1,0 +1,19 @@
+spring:
+    profiles: local
+    cloud:
+        gateway:
+          routes:
+            - id: apigw-asis
+              uri: http://localhost:8081/
+              predicates:
+                - Path=/employees/**
+              filters:
+                - name: MyGWFilter
+                  args:
+                    message: Spring Cloud Gateway MyGWFilter
+       
+                - AddResponseHeader=X-Response-Red, Blue
+server:
+  port: 8080
+
+  
